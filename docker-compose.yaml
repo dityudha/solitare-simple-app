@@ -1,0 +1,11 @@
+version: '3'
+services: 
+    api-service:
+        build: ./testing-welcome/
+        volumes: 
+            - ./testing-welcome/:/home/soleluna/solitare-simple-app
+        ports: 
+            - 8000:8000
+        environment: 
+            PORT: 5000
+            FLASK_DEBUG: 1
