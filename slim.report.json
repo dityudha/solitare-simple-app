@@ -1,0 +1,24 @@
+{
+  "version": "1.0",
+  "engine": "linux|Transformer|1.37.3|97eb3c8c7f8c4e295a26c13882feb3f0539ab50f|2021-12-10_09:37:29AM",
+  "containerized": false,
+  "host_distro": {
+    "name": "CentOS Linux",
+    "version": "7",
+    "display_name": "CentOS Linux 7 (Core)"
+  },
+  "type": "profile",
+  "state": "done",
+  "original_image": "nginx.slim",
+  "original_image_size": 0,
+  "original_image_size_human": "",
+  "minified_image_size": 0,
+  "minified_image_size_human": "",
+  "minified_image": "",
+  "minified_image_has_data": false,
+  "minified_by": 0,
+  "artifact_location": "",
+  "container_report_name": "",
+  "seccomp_profile_name": "",
+  "apparmor_profile_name": ""
+}
