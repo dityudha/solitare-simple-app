@@ -7,18 +7,479 @@
     "version": "7",
     "display_name": "CentOS Linux 7 (Core)"
   },
-  "type": "profile",
+  "type": "build",
   "state": "done",
-  "original_image": "nginx.slim",
-  "original_image_size": 0,
-  "original_image_size_human": "",
-  "minified_image_size": 0,
-  "minified_image_size_human": "",
-  "minified_image": "",
-  "minified_image_has_data": false,
-  "minified_by": 0,
-  "artifact_location": "",
-  "container_report_name": "",
-  "seccomp_profile_name": "",
-  "apparmor_profile_name": ""
+  "target_reference": "solitare-app:test4",
+  "system": {
+    "type": "Linux",
+    "release": "3.10.0-1160.102.1.el7.x86_64",
+    "distro": {
+      "name": "Debian GNU/Linux",
+      "version": "12",
+      "display_name": "Debian GNU/Linux 12 (bookworm)"
+    }
+  },
+  "source_image": {
+    "identity": {
+      "id": "sha256:0aedb5a57dec13fc47c7a58b99b7ce20c324d340f23d4397fe8321a370e310a3",
+      "tags": [
+        "test4"
+      ],
+      "names": [
+        "solitare-app:test4"
+      ]
+    },
+    "size": 1025592834,
+    "size_human": "1.0 GB",
+    "create_time": "2023-12-15T09:34:39Z",
+    "docker_version": "",
+    "architecture": "amd64",
+    "exposed_ports": [
+      "5000/tcp"
+    ],
+    "os": "linux",
+    "env_vars": [
+      "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+      "LANG=C.UTF-8",
+      "GPG_KEY=E3FF2839C048B25C084DEBE9B26995E310250568",
+      "PYTHON_VERSION=3.9.18",
+      "PYTHON_PIP_VERSION=23.0.1",
+      "PYTHON_SETUPTOOLS_VERSION=58.1.0",
+      "PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/4cfa4081d27285bda1220a62a5ebf5b4bd749cdb/public/get-pip.py",
+      "PYTHON_GET_PIP_SHA256=9cc01665956d22b3bf057ae8287b035827bfd895da235bcea200ab3b811790b6"
+    ],
+    "container_entry": {
+      "exe_path": ""
+    }
+  },
+  "minified_image_size": 35138106,
+  "minified_image_size_human": "35 MB",
+  "minified_image": "solitare-app.slim",
+  "minified_image_has_data": true,
+  "minified_by": 29.187481932008517,
+  "artifact_location": "/tmp/docker-slim-state/.docker-slim-state/images/0aedb5a57dec13fc47c7a58b99b7ce20c324d340f23d4397fe8321a370e310a3/artifacts",
+  "container_report_name": "creport.json",
+  "seccomp_profile_name": "solitare-app-seccomp.json",
+  "apparmor_profile_name": "solitare-app-apparmor-profile",
+  "image_stack": [
+    {
+      "is_top_image": true,
+      "id": "sha256:0aedb5a57dec13fc47c7a58b99b7ce20c324d340f23d4397fe8321a370e310a3",
+      "full_name": "solitare-app:test4",
+      "repo_name": "solitare-app",
+      "version_tag": "test4",
+      "raw_tags": [
+        "solitare-app:test4"
+      ],
+      "create_time": "2023-12-15T09:34:39Z",
+      "new_size": 1025592834,
+      "new_size_human": "1.0 GB",
+      "instructions": [
+        {
+          "type": "ADD",
+          "time": "2023-10-21T21:17:19Z",
+          "is_nop": true,
+          "local_image_exists": false,
+          "layer_index": 0,
+          "size": 116549158,
+          "size_human": "116 MB",
+          "params": "file:39d17d28c5de0bd629e5b7c8190228e5a445d61d668e189b7523e90e68f78244 in /",
+          "command_snippet": "ADD file:39d17d28c5de0bd629e5b7c8190228e5a44...",
+          "command_all": "ADD file:39d17d28c5de0bd629e5b7c8190228e5a445d61d668e189b7523e90e68f78244 /",
+          "target": "/",
+          "source_type": "file"
+        },
+        {
+          "type": "CMD",
+          "time": "2023-10-21T21:17:19Z",
+          "is_nop": true,
+          "is_exec_form": true,
+          "local_image_exists": false,
+          "layer_index": 0,
+          "size": 0,
+          "params": "[\"bash\"]\n",
+          "command_snippet": "CMD [\"bash\"]\n",
+          "command_all": "CMD [\"bash\"]\n"
+        },
+        {
+          "type": "RUN",
+          "time": "2023-10-21T21:17:19Z",
+          "is_nop": false,
+          "local_image_exists": false,
+          "layer_index": 0,
+          "size": 48439826,
+          "size_human": "48 MB",
+          "command_snippet": "RUN set -eux; \tapt-get update; \tapt-get inst...",
+          "command_all": "RUN set -eux; \tapt-get update; \tapt-get install -y --no-install-recommends \t\tca-certificates \t\tcurl \t\tgnupg \t\tnetbase \t\tsq \t\twget \t; \trm -rf /var/lib/apt/lists/*",
+          "system_commands": [
+            "set -eux",
+            "apt-get update",
+            "apt-get install -y --no-install-recommends ca-certificates curl gnupg netbase sq wget",
+            "rm -rf /var/lib/apt/lists/*"
+          ]
+        },
+        {
+          "type": "RUN",
+          "time": "2023-10-21T21:17:19Z",
+          "is_nop": false,
+          "local_image_exists": false,
+          "layer_index": 0,
+          "size": 176679217,
+          "size_human": "177 MB",
+          "command_snippet": "RUN apt-get update && \\\n\tapt-get install -y ...",
+          "command_all": "RUN apt-get update && \\\n\tapt-get install -y --no-install-recommends \t\tgit \t\tmercurial \t\topenssh-client \t\tsubversion \t\t\t\tprocps && \\\n\trm -rf /var/lib/apt/lists/*",
+          "system_commands": [
+            "apt-get update",
+            "apt-get install -y --no-install-recommends git mercurial openssh-client subversion procps",
+            "rm -rf /var/lib/apt/lists/*"
+          ]
+        },
+        {
+          "type": "RUN",
+          "time": "2023-10-21T21:17:19Z",
+          "is_nop": false,
+          "local_image_exists": false,
+          "layer_index": 0,
+          "size": 587183305,
+          "size_human": "587 MB",
+          "command_snippet": "RUN set -ex; \tapt-get update; \tapt-get insta...",
+          "command_all": "RUN set -ex; \tapt-get update; \tapt-get install -y --no-install-recommends \t\tautoconf \t\tautomake \t\tbzip2 \t\tdpkg-dev \t\tfile \t\tg++ \t\tgcc \t\timagemagick \t\tlibbz2-dev \t\tlibc6-dev \t\tlibcurl4-openssl-dev \t\tlibdb-dev \t\tlibevent-dev \t\tlibffi-dev \t\tlibgdbm-dev \t\tlibglib2.0-dev \t\tlibgmp-dev \t\tlibjpeg-dev \t\tlibkrb5-dev \t\tliblzma-dev \t\tlibmagickcore-dev \t\tlibmagickwand-dev \t\tlibmaxminddb-dev \t\tlibncurses5-dev \t\tlibncursesw5-dev \t\tlibpng-dev \t\tlibpq-dev \t\tlibreadline-dev \t\tlibsqlite3-dev \t\tlibssl-dev \t\tlibtool \t\tlibwebp-dev \t\tlibxml2-dev \t\tlibxslt-dev \t\tlibyaml-dev \t\tmake \t\tpatch \t\tunzip \t\txz-utils \t\tzlib1g-dev \t\t\t\t$( \t\t\tif apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then \t\t\t\techo 'default-libmysqlclient-dev'; \t\t\telse \t\t\t\techo 'libmysqlclient-dev'; \t\t\tfi \t\t) \t; \trm -rf /var/lib/apt/lists/*",
+          "system_commands": [
+            "set -ex",
+            "apt-get update",
+            "apt-get install -y --no-install-recommends autoconf automake bzip2 dpkg-dev file g++ gcc imagemagick libbz2-dev libc6-dev libcurl4-openssl-dev libdb-dev libevent-dev libffi-dev libgdbm-dev libglib2.0-dev libgmp-dev libjpeg-dev libkrb5-dev liblzma-dev libmagickcore-dev libmagickwand-dev libmaxminddb-dev libncurses5-dev libncursesw5-dev libpng-dev libpq-dev libreadline-dev libsqlite3-dev libssl-dev libtool libwebp-dev libxml2-dev libxslt-dev libyaml-dev make patch unzip xz-utils zlib1g-dev $( if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'",
+            "then echo 'default-libmysqlclient-dev'",
+            "else echo 'libmysqlclient-dev'",
+            "fi )",
+            "rm -rf /var/lib/apt/lists/*"
+          ]
+        },
+        {
+          "type": "RUN",
+          "time": "2023-10-21T21:17:19Z",
+          "is_nop": false,
+          "is_exec_form": true,
+          "local_image_exists": false,
+          "layer_index": 0,
+          "size": 0,
+          "command_snippet": "RUN [\"ENV\",\"PATH=/usr/local/bin:/usr/local/s...",
+          "command_all": "RUN [\"ENV\",\"PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\"]",
+          "system_commands": [
+            "[\"ENV\",\"PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\"]"
+          ],
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "type": "RUN",
+          "time": "2023-10-21T21:17:19Z",
+          "is_nop": false,
+          "is_exec_form": true,
+          "local_image_exists": false,
+          "layer_index": 0,
+          "size": 0,
+          "command_snippet": "RUN [\"ENV\",\"LANG=C.UTF-8\"]",
+          "command_all": "RUN [\"ENV\",\"LANG=C.UTF-8\"]",
+          "system_commands": [
+            "[\"ENV\",\"LANG=C.UTF-8\"]"
+          ],
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "type": "RUN",
+          "time": "2023-10-21T21:17:19Z",
+          "is_nop": false,
+          "is_exec_form": true,
+          "local_image_exists": false,
+          "layer_index": 0,
+          "size": 17768968,
+          "size_human": "18 MB",
+          "command_snippet": "RUN [\"RUN\",\"/bin/sh\",\"-c\",\"set\",\"-eux;\",\"apt...",
+          "command_all": "RUN [\"RUN\",\"/bin/sh\",\"-c\",\"set\",\"-eux;\",\"apt-get\",\"update;\",\"apt-get\",\"install\",\"-y\",\"--no-install-recommends\",\"libbluetooth-dev\",\"tk-dev\",\"uuid-dev\",\";\",\"rm\",\"-rf\",\"/var/lib/apt/lists/*\"]",
+          "system_commands": [
+            "[\"RUN\",\"/bin/sh\",\"-c\",\"set\",\"-eux",
+            "\",\"apt-get\",\"update",
+            "\",\"apt-get\",\"install\",\"-y\",\"--no-install-recommends\",\"libbluetooth-dev\",\"tk-dev\",\"uuid-dev\",\"",
+            "\",\"rm\",\"-rf\",\"/var/lib/apt/lists/*\"]"
+          ],
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "type": "RUN",
+          "time": "2023-10-21T21:17:19Z",
+          "is_nop": false,
+          "is_exec_form": true,
+          "local_image_exists": false,
+          "layer_index": 0,
+          "size": 0,
+          "command_snippet": "RUN [\"ENV\",\"GPG_KEY=E3FF2839C048B25C084DEBE9...",
+          "command_all": "RUN [\"ENV\",\"GPG_KEY=E3FF2839C048B25C084DEBE9B26995E310250568\"]",
+          "system_commands": [
+            "[\"ENV\",\"GPG_KEY=E3FF2839C048B25C084DEBE9B26995E310250568\"]"
+          ],
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "type": "RUN",
+          "time": "2023-10-21T21:17:19Z",
+          "is_nop": false,
+          "is_exec_form": true,
+          "local_image_exists": false,
+          "layer_index": 0,
+          "size": 0,
+          "command_snippet": "RUN [\"ENV\",\"PYTHON_VERSION=3.9.18\"]",
+          "command_all": "RUN [\"ENV\",\"PYTHON_VERSION=3.9.18\"]",
+          "system_commands": [
+            "[\"ENV\",\"PYTHON_VERSION=3.9.18\"]"
+          ],
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "type": "RUN",
+          "time": "2023-10-21T21:17:19Z",
+          "is_nop": false,
+          "is_exec_form": true,
+          "local_image_exists": false,
+          "layer_index": 0,
+          "size": 39390794,
+          "size_human": "39 MB",
+          "command_snippet": "RUN [\"RUN\",\"/bin/sh\",\"-c\",\"set\",\"-eux;\",\"wge...",
+          "command_all": "RUN [\"RUN\",\"/bin/sh\",\"-c\",\"set\",\"-eux;\",\"wget\",\"-O\",\"python.tar.xz\",\"https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz;\",\"wget\",\"-O\",\"python.tar.xz.asc\",\"https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz.asc;\",\"GNUPGHOME=$(mktemp -d);\",\"export\",\"GNUPGHOME;\",\"gpg\",\"--batch\",\"--keyserver\",\"hkps://keys.openpgp.org\",\"--recv-keys\",\"$GPG_KEY;\",\"gpg\",\"--batch\",\"--verify\",\"python.tar.xz.asc\",\"python.tar.xz;\",\"gpgconf\",\"--kill\",\"all;\",\"rm\",\"-rf\",\"$GNUPGHOME\",\"python.tar.xz.asc;\",\"mkdir\",\"-p\",\"/usr/src/python;\",\"tar\",\"--extract\",\"--directory\",\"/usr/src/python\",\"--strip-components=1\",\"--file\",\"python.tar.xz;\",\"rm\",\"python.tar.xz;\",\"cd\",\"/usr/src/python;\",\"gnuArch=$(dpkg-architecture --query DEB_BUILD_GNU_TYPE);\",\"./configure\",\"--build=$gnuArch\",\"--enable-loadable-sqlite-extensions\",\"--enable-optimizations\",\"--enable-option-checking=fatal\",\"--enable-shared\",\"--with-system-expat\",\"--without-ensurepip\",\";\",\"nproc=$(nproc);\",\"EXTRA_CFLAGS=$(dpkg-buildflags --get CFLAGS);\",\"LDFLAGS=$(dpkg-buildflags --get LDFLAGS);\",\"make\",\"-j\",\"$nproc\",\"EXTRA_CFLAGS=${EXTRA_CFLAGS:-}\",\"LDFLAGS=${LDFLAGS:-}\",\"PROFILE_TASK=${PROFILE_TASK:-}\",\";\",\"rm\",\"python;\",\"make\",\"-j\",\"$nproc\",\"EXTRA_CFLAGS=${EXTRA_CFLAGS:-}\",\"LDFLAGS=${LDFLAGS:--Wl},-rpath='$$ORIGIN/../lib'\",\"PROFILE_TASK=${PROFILE_TASK:-}\",\"python\",\";\",\"make\",\"install;\",\"bin=$(readlink -ve /usr/local/bin/python3);\",\"dir=$(dirname $bin);\",\"mkdir\",\"-p\",\"/usr/share/gdb/auto-load/$dir;\",\"cp\",\"-vL\",\"Tools/gdb/libpython.py\",\"/usr/share/gdb/auto-load/$bin-gdb.py;\",\"cd\",\"/;\",\"rm\",\"-rf\",\"/usr/src/python;\",\"find\",\"/usr/local\",\"-depth\",\"(\",\"(\",\"-type\",\"d\",\"-a\",\"(\",\"-name\",\"test\",\"-o\",\"-name\",\"tests\",\"-o\",\"-name\",\"idle_test\",\")\",\")\",\"-o\",\"(\",\"-type\",\"f\",\"-a\",\"(\",\"-name\",\"*.pyc\",\"-o\",\"-name\",\"*.pyo\",\"-o\",\"-name\",\"libpython*.a\",\")\",\")\",\")\",\"-exec\",\"rm\",\"-rf\",\"{}\",\"+\",\";\",\"ldconfig;\",\"python3\",\"--version\"]",
+          "system_commands": [
+            "[\"RUN\",\"/bin/sh\",\"-c\",\"set\",\"-eux",
+            "\",\"wget\",\"-O\",\"python.tar.xz\",\"https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz",
+            "\",\"wget\",\"-O\",\"python.tar.xz.asc\",\"https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz.asc",
+            "\",\"GNUPGHOME=$(mktemp -d)",
+            "\",\"export\",\"GNUPGHOME",
+            "\",\"gpg\",\"--batch\",\"--keyserver\",\"hkps://keys.openpgp.org\",\"--recv-keys\",\"$GPG_KEY",
+            "\",\"gpg\",\"--batch\",\"--verify\",\"python.tar.xz.asc\",\"python.tar.xz",
+            "\",\"gpgconf\",\"--kill\",\"all",
+            "\",\"rm\",\"-rf\",\"$GNUPGHOME\",\"python.tar.xz.asc",
+            "\",\"mkdir\",\"-p\",\"/usr/src/python",
+            "\",\"tar\",\"--extract\",\"--directory\",\"/usr/src/python\",\"--strip-components=1\",\"--file\",\"python.tar.xz",
+            "\",\"rm\",\"python.tar.xz",
+            "\",\"cd\",\"/usr/src/python",
+            "\",\"gnuArch=$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)",
+            "\",\"./configure\",\"--build=$gnuArch\",\"--enable-loadable-sqlite-extensions\",\"--enable-optimizations\",\"--enable-option-checking=fatal\",\"--enable-shared\",\"--with-system-expat\",\"--without-ensurepip\",\"",
+            "\",\"nproc=$(nproc)",
+            "\",\"EXTRA_CFLAGS=$(dpkg-buildflags --get CFLAGS)",
+            "\",\"LDFLAGS=$(dpkg-buildflags --get LDFLAGS)",
+            "\",\"make\",\"-j\",\"$nproc\",\"EXTRA_CFLAGS=${EXTRA_CFLAGS:-}\",\"LDFLAGS=${LDFLAGS:-}\",\"PROFILE_TASK=${PROFILE_TASK:-}\",\"",
+            "\",\"rm\",\"python",
+            "\",\"make\",\"-j\",\"$nproc\",\"EXTRA_CFLAGS=${EXTRA_CFLAGS:-}\",\"LDFLAGS=${LDFLAGS:--Wl},-rpath='$$ORIGIN/../lib'\",\"PROFILE_TASK=${PROFILE_TASK:-}\",\"python\",\"",
+            "\",\"make\",\"install",
+            "\",\"bin=$(readlink -ve /usr/local/bin/python3)",
+            "\",\"dir=$(dirname $bin)",
+            "\",\"mkdir\",\"-p\",\"/usr/share/gdb/auto-load/$dir",
+            "\",\"cp\",\"-vL\",\"Tools/gdb/libpython.py\",\"/usr/share/gdb/auto-load/$bin-gdb.py",
+            "\",\"cd\",\"/",
+            "\",\"rm\",\"-rf\",\"/usr/src/python",
+            "\",\"find\",\"/usr/local\",\"-depth\",\"(\",\"(\",\"-type\",\"d\",\"-a\",\"(\",\"-name\",\"test\",\"-o\",\"-name\",\"tests\",\"-o\",\"-name\",\"idle_test\",\")\",\")\",\"-o\",\"(\",\"-type\",\"f\",\"-a\",\"(\",\"-name\",\"*.pyc\",\"-o\",\"-name\",\"*.pyo\",\"-o\",\"-name\",\"libpython*.a\",\")\",\")\",\")\",\"-exec\",\"rm\",\"-rf\",\"{}\",\"+\",\"",
+            "\",\"ldconfig",
+            "\",\"python3\",\"--version\"]"
+          ],
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "type": "RUN",
+          "time": "2023-10-21T21:17:19Z",
+          "is_nop": false,
+          "is_exec_form": true,
+          "local_image_exists": false,
+          "layer_index": 0,
+          "size": 32,
+          "size_human": "32 B",
+          "command_snippet": "RUN [\"RUN\",\"/bin/sh\",\"-c\",\"set\",\"-eux;\",\"for...",
+          "command_all": "RUN [\"RUN\",\"/bin/sh\",\"-c\",\"set\",\"-eux;\",\"for\",\"src\",\"in\",\"idle3\",\"pydoc3\",\"python3\",\"python3-config;\",\"do\",\"dst=$(echo $src | tr -d 3);\",\"[\",\"-s\",\"/usr/local/bin/$src\",\"];\",\"[\",\"!\",\"-e\",\"/usr/local/bin/$dst\",\"];\",\"ln\",\"-svT\",\"$src\",\"/usr/local/bin/$dst;\",\"done\"]",
+          "system_commands": [
+            "[\"RUN\",\"/bin/sh\",\"-c\",\"set\",\"-eux",
+            "\",\"for\",\"src\",\"in\",\"idle3\",\"pydoc3\",\"python3\",\"python3-config",
+            "\",\"do\",\"dst=$(echo $src | tr -d 3)",
+            "\",\"[\",\"-s\",\"/usr/local/bin/$src\",\"]",
+            "\",\"[\",\"!\",\"-e\",\"/usr/local/bin/$dst\",\"]",
+            "\",\"ln\",\"-svT\",\"$src\",\"/usr/local/bin/$dst",
+            "\",\"done\"]"
+          ],
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "type": "RUN",
+          "time": "2023-10-21T21:17:19Z",
+          "is_nop": false,
+          "is_exec_form": true,
+          "local_image_exists": false,
+          "layer_index": 0,
+          "size": 0,
+          "command_snippet": "RUN [\"ENV\",\"PYTHON_PIP_VERSION=23.0.1\"]",
+          "command_all": "RUN [\"ENV\",\"PYTHON_PIP_VERSION=23.0.1\"]",
+          "system_commands": [
+            "[\"ENV\",\"PYTHON_PIP_VERSION=23.0.1\"]"
+          ],
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "type": "RUN",
+          "time": "2023-10-21T21:17:19Z",
+          "is_nop": false,
+          "is_exec_form": true,
+          "local_image_exists": false,
+          "layer_index": 0,
+          "size": 0,
+          "command_snippet": "RUN [\"ENV\",\"PYTHON_SETUPTOOLS_VERSION=58.1.0...",
+          "command_all": "RUN [\"ENV\",\"PYTHON_SETUPTOOLS_VERSION=58.1.0\"]",
+          "system_commands": [
+            "[\"ENV\",\"PYTHON_SETUPTOOLS_VERSION=58.1.0\"]"
+          ],
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "type": "RUN",
+          "time": "2023-10-21T21:17:19Z",
+          "is_nop": false,
+          "is_exec_form": true,
+          "local_image_exists": false,
+          "layer_index": 0,
+          "size": 0,
+          "command_snippet": "RUN [\"ENV\",\"PYTHON_GET_PIP_URL=https://githu...",
+          "command_all": "RUN [\"ENV\",\"PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/4cfa4081d27285bda1220a62a5ebf5b4bd749cdb/public/get-pip.py\"]",
+          "system_commands": [
+            "[\"ENV\",\"PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/4cfa4081d27285bda1220a62a5ebf5b4bd749cdb/public/get-pip.py\"]"
+          ],
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "type": "RUN",
+          "time": "2023-10-21T21:17:19Z",
+          "is_nop": false,
+          "is_exec_form": true,
+          "local_image_exists": false,
+          "layer_index": 0,
+          "size": 0,
+          "command_snippet": "RUN [\"ENV\",\"PYTHON_GET_PIP_SHA256=9cc0166595...",
+          "command_all": "RUN [\"ENV\",\"PYTHON_GET_PIP_SHA256=9cc01665956d22b3bf057ae8287b035827bfd895da235bcea200ab3b811790b6\"]",
+          "system_commands": [
+            "[\"ENV\",\"PYTHON_GET_PIP_SHA256=9cc01665956d22b3bf057ae8287b035827bfd895da235bcea200ab3b811790b6\"]"
+          ],
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "type": "RUN",
+          "time": "2023-10-21T21:17:19Z",
+          "is_nop": false,
+          "is_exec_form": true,
+          "local_image_exists": false,
+          "layer_index": 0,
+          "size": 9904302,
+          "size_human": "9.9 MB",
+          "command_snippet": "RUN [\"RUN\",\"/bin/sh\",\"-c\",\"set\",\"-eux;\",\"wge...",
+          "command_all": "RUN [\"RUN\",\"/bin/sh\",\"-c\",\"set\",\"-eux;\",\"wget\",\"-O\",\"get-pip.py\",\"$PYTHON_GET_PIP_URL;\",\"echo\",\"$PYTHON_GET_PIP_SHA256 *get-pip.py\",\"|\",\"sha256sum\",\"-c\",\"-;\",\"export\",\"PYTHONDONTWRITEBYTECODE=1;\",\"python\",\"get-pip.py\",\"--disable-pip-version-check\",\"--no-cache-dir\",\"--no-compile\",\"pip==$PYTHON_PIP_VERSION\",\"setuptools==$PYTHON_SETUPTOOLS_VERSION\",\";\",\"rm\",\"-f\",\"get-pip.py;\",\"pip\",\"--version\"]",
+          "system_commands": [
+            "[\"RUN\",\"/bin/sh\",\"-c\",\"set\",\"-eux",
+            "\",\"wget\",\"-O\",\"get-pip.py\",\"$PYTHON_GET_PIP_URL",
+            "\",\"echo\",\"$PYTHON_GET_PIP_SHA256 *get-pip.py\",\"|\",\"sha256sum\",\"-c\",\"-",
+            "\",\"export\",\"PYTHONDONTWRITEBYTECODE=1",
+            "\",\"python\",\"get-pip.py\",\"--disable-pip-version-check\",\"--no-cache-dir\",\"--no-compile\",\"pip==$PYTHON_PIP_VERSION\",\"setuptools==$PYTHON_SETUPTOOLS_VERSION\",\"",
+            "\",\"rm\",\"-f\",\"get-pip.py",
+            "\",\"pip\",\"--version\"]"
+          ],
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "type": "RUN",
+          "time": "2023-10-21T21:17:19Z",
+          "is_nop": false,
+          "is_exec_form": true,
+          "local_image_exists": false,
+          "layer_index": 0,
+          "size": 0,
+          "command_snippet": "RUN [\"CMD\",\"[python3]\"]",
+          "command_all": "RUN [\"CMD\",\"[python3]\"]",
+          "system_commands": [
+            "[\"CMD\",\"[python3]\"]"
+          ],
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "type": "RUN",
+          "time": "2023-12-15T09:34:31Z",
+          "is_nop": false,
+          "is_exec_form": true,
+          "local_image_exists": false,
+          "layer_index": 0,
+          "size": 18382942,
+          "size_human": "18 MB",
+          "command_snippet": "RUN [\"COPY\",\".\",\"/home/soleluna/solitare-sim...",
+          "command_all": "RUN [\"COPY\",\".\",\"/home/soleluna/solitare-simple-app\"]",
+          "system_commands": [
+            "[\"COPY\",\".\",\"/home/soleluna/solitare-simple-app\"]"
+          ],
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "type": "RUN",
+          "time": "2023-12-15T09:34:31Z",
+          "is_nop": false,
+          "is_exec_form": true,
+          "local_image_exists": false,
+          "layer_index": 0,
+          "size": 0,
+          "command_snippet": "RUN [\"WORKDIR\",\"/home/soleluna/solitare-simp...",
+          "command_all": "RUN [\"WORKDIR\",\"/home/soleluna/solitare-simple-app\"]",
+          "system_commands": [
+            "[\"WORKDIR\",\"/home/soleluna/solitare-simple-app\"]"
+          ],
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "type": "RUN",
+          "time": "2023-12-15T09:34:39Z",
+          "is_nop": false,
+          "is_exec_form": true,
+          "local_image_exists": false,
+          "layer_index": 0,
+          "size": 0,
+          "command_snippet": "RUN [\"EXPOSE\",\"map[5000/tcp:{}]\"]",
+          "command_all": "RUN [\"EXPOSE\",\"map[5000/tcp:{}]\"]",
+          "system_commands": [
+            "[\"EXPOSE\",\"map[5000/tcp:{}]\"]"
+          ],
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "type": "RUN",
+          "time": "2023-12-15T09:34:39Z",
+          "is_nop": false,
+          "is_exec_form": true,
+          "local_image_exists": false,
+          "layer_index": 0,
+          "size": 11294290,
+          "size_human": "11 MB",
+          "command_snippet": "RUN [\"RUN\",\"/bin/sh\",\"-c\",\"pip\",\"install\",\"-...",
+          "command_all": "RUN [\"RUN\",\"/bin/sh\",\"-c\",\"pip\",\"install\",\"-r\",\"requirements.txt\"]",
+          "system_commands": [
+            "[\"RUN\",\"/bin/sh\",\"-c\",\"pip\",\"install\",\"-r\",\"requirements.txt\"]"
+          ],
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "type": "RUN",
+          "time": "2023-12-15T09:34:39Z",
+          "is_last_instruction": true,
+          "is_nop": false,
+          "is_exec_form": true,
+          "local_image_exists": true,
+          "layer_index": 0,
+          "size": 0,
+          "command_snippet": "RUN [\"CMD\",\"[python\",\"app.py]\"]",
+          "command_all": "RUN [\"CMD\",\"[python\",\"app.py]\"]",
+          "system_commands": [
+            "[\"CMD\",\"[python\",\"app.py]\"]"
+          ],
+          "comment": "buildkit.dockerfile.v0",
+          "raw_tags": [
+            "solitare-app:test4"
+          ]
+        }
+      ]
+    }
+  ]
 }

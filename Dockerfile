@@ -1,16 +1,25 @@
-# This is the first image:
-FROM python:3.6 AS compile-image
-COPY requirements.txt /tmp/requirements.txt
-RUN python3 -m pip install -r /tmp/requirements.txt
-
-WORKDIR /home/soleluna/solitare-simple-app
+### Single Build
+FROM python:3.9
 COPY . /home/soleluna/solitare-simple-app
-
-# This is the second and final image; it copies the compiled binary
-# over but starts from the base python:3.6 image.
-FROM python:3.6 AS runtime-image
-
-COPY --from=compile-image /home/soleluna .
-
+WORKDIR /home/soleluna/solitare-simple-app
 EXPOSE 5000
+RUN pip install -r requirements.txt
 CMD ["python", "app.py"]
+
+
+### Multistage Build
+# Stage 1: Build
+#FROM python:3.9 as build
+
+#WORKDIR /home/soleluna/solitare-simple-app
+#COPY /home/soleluna/solitare-simple-app .
+#RUN pip install --no-cache-dir -r requirements.txt
+
+# Stage 2: Runtime
+#FROM python:3.9-slim as runtime
+
+#WORKDIR /app
+#COPY --from=build /app /app
+
+#EXPOSE 5000
+#CMD ["python", "app.py"]
